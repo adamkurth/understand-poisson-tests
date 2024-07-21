@@ -1,0 +1,50 @@
+---
+title: "Untitled"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(MASS)
+library(exactci)
+library(ggplot2)
+library(dplyr)
+```
+
+### Poisson 
+
+```{r cars}
+lambda1 <- 5
+lambda2 <- 7
+n1 <- 50
+n2 <- 50
+
+# generate data
+x1 <- rpois(n1, lambda1)
+x2 <- rpois(n2, lambda2)
+
+# means
+mean1 <- mean(x1)
+mean2 <- mean(x2)
+
+# set significance level
+alpha <- 0.05
+
+cat("Sample 1: mean = ", mean1, "n1 = ", n1, "\n")
+cat("Sample 2: mean = ", mean2, "n2 = ", n2, "\n")
+```
+
+### Large Sample Z ~ N(0,1)
+
+
+```{r pressure, echo=FALSE}
+pooled <- (sum(x1) + sum(x2)) / (n1 + n2)
+
+# z stat
+z_stat <- (mean1 - mean2) / sqrt(pooled_lambda * (1/n1 + 1/n2))
+
+# p-value
+z_pval <- 2 * (1 - pnorm(abs(z_stat))) # two-tailed test
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

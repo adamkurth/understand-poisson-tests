@@ -1,5 +1,5 @@
 ### Instructions:
-6/5/24 Write up a comparison of various tests of two Poisson distribution means and rank/grade them based on various contexts. Read about tests in Rosner, Bernard. "Fundamentals of Biostatistics." 8th Edition.
+7/5/24 Write up a comparison of various tests of two Poisson distribution means and rank/grade them based on various contexts. Read about tests in Rosner, Bernard. "Fundamentals of Biostatistics." 8th Edition.
 
 
 #### Wald's Test: 
